@@ -2,3 +2,9 @@ div.cell
 {
 	display: inline-block;
 }
+
+div.cell textarea.description
+{
+	width: 200px;
+	height: 75px;
+}
