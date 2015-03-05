@@ -8,51 +8,44 @@
 		<script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.0/backbone-min.js"></script>
 
 		<script src="js/main.js?rev=<%= ticks %>"></script>
+		<script src="js/view.js?rev=<%= ticks %>"></script>
 
 		<link href="css/dq.css?rev=<%= ticks %>" type="text/css" rel="stylesheet"></link>
 	</head>
 
 	<body>
-		<%= ticks %>
-		<div class="row">
-			<div class="cell" data-name="Cloak">
-				Cloak:
+		<div id="mainSheet">
+			<div class="row">
+				<div class="cell" data-name="Cloak">
+				</div>
+
+				<div class="cell" data-name="Head">
+				</div>
+
+				<div class="cell" data-name="Gloves">
+				</div>
 			</div>
 
-			<div class="cell" data-name="Head">
-				Head:
+			<div class="row">
+				<div class="cell" data-name="Main Hand">
+				</div>
+
+				<div class="cell" data-name="Chest">
+				</div>
+
+				<div class="cell" data-name="Left Hand">
+				</div>
 			</div>
 
-			<div class="cell" data-name="Gloves">
-				Gloves:
-			</div>
-		</div>
+			<div class="row">
+				<div class="cell" data-name="Talisman">
+				</div>
 
-		<div class="row">
-			<div class="cell" data-name="Main Hand">
-				Main Hand:
-			</div>
+				<div class="cell" data-name="Feet">
+				</div>
 
-			<div class="cell" data-name="Chest">
-				Chest:
-			</div>
-
-			<div class="cell" data-name="Left Hand">
-				Left Hand:
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="cell" data-name="Talisman">
-				Talisman:
-			</div>
-
-			<div class="cell" data-name="Feet">
-				Feet:
-			</div>
-
-			<div class="cell" data-name="Money Pouch">
-				Money Pouch:
+				<div class="cell" data-name="Money Pouch">
+				</div>
 			</div>
 		</div>
 	</body>
