@@ -23,12 +23,14 @@
 			return this;
 		},
 
-		increment: function() {
+		increment: function(e) {
+			e.preventDefault();
 			this.model.set({count: this.model.get("count") + 1});
 			this.render();
 		},
 
-		decrement: function() {
+		decrement: function(e) {
+			e.preventDefault();
 			if(this.model.get("count") > 0) {
 				this.model.set({count: this.model.get("count") - 1});
 				this.render();

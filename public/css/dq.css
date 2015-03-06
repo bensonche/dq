@@ -8,3 +8,14 @@ div.cell textarea.description
 	width: 200px;
 	height: 75px;
 }
+
+div.attributes
+{
+	display: inline-block;
+}
+
+div.attributes a
+{
+	padding-left: 5px;
+	padding-right: 2px;
+}
