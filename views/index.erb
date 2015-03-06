@@ -8,7 +8,11 @@
 		<script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.0/backbone-min.js"></script>
 
 		<script src="js/main.js?rev=<%= ticks %>"></script>
-		<script src="js/view.js?rev=<%= ticks %>"></script>
+		<script src="js/views/mainSheetView.js?rev=<%= ticks %>"></script>
+		<script src="js/views/counterView.js?rev=<%= ticks %>"></script>
+
+		<script src="js/models/counter.js?rev=<%= ticks %>"></script>
+
 
 		<link href="css/dq.css?rev=<%= ticks %>" type="text/css" rel="stylesheet"></link>
 	</head>
@@ -51,9 +55,19 @@
 
 		<!-- Templates -->
 		<script id="mainCellTemplate" type="text/template">
-			<%%- name %>:
-			<br />
-			<textarea rows="2" class="description" />
+			<div>
+				<p><%%- name %>:</p>
+				<textarea rows="2" class="description" />
+
+				<div class="attributes"></div>
+			</div>
+		</script>
+
+		<script id="counterTemplate" type="text/template">
+				<%%= type %>
+				<%%= count %>
+				<button class="increment">+</button>
+				<button class="decrement">-</button>
 		</script>
 	</body>
 </html>

@@ -20,10 +20,17 @@
 
 				var name = $value.attr("data-name");
 
-				$(value).html(compiled({name: name}));
+				var cell = compiled({
+					name: name
+				});
+
+				$value.append(cell);
+
+				var csView = new dq.CounterSetView({el: $value.find(".attributes")});
 			});
 		}
 	});
+
 })(dq);
 
 $(function() {
