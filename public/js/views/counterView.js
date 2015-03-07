@@ -25,15 +25,14 @@
 
 		increment: function(e) {
 			e.preventDefault();
-			this.model.increment();
+			this.model.addCount(1);
 			this.render();
 		},
 
 		decrement: function(e) {
 			e.preventDefault();
-
-			if(this.model.decrement())
-				this.render();
+			this.model.addCount(-1);
+			this.render();
 		}
 	});
 
