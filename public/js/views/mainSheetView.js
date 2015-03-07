@@ -40,10 +40,14 @@
 
 				$cell.find(".description").on("keydown", value.updateDescription);
 
-				new dq.CounterSetView({
-					el: $cell.find(".attributes"),
-					collection: value.get("counterSet")
-				});
+				var includeCounter = $cell.attr("data-counter");
+
+				if(includeCounter && includeCounter.toLower() == "true") {
+					new dq.CounterSetView({
+						el: $cell.find(".attributes"),
+						collection: value.get("counterSet")
+					});
+				}
 
 			}, this);
 		},
