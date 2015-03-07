@@ -65,8 +65,14 @@
 		</script>
 
 		<script id="counterTemplate" type="text/template">
-			<%%= type %>
-			<%%= count %>
+			<div class="counterName">
+				<%%= type %>
+			</div>
+
+			<div class="counterCount">
+				<%%= count %>
+			</div>
+
 			<a href="#" class="increment">+</a>
 			<a href="#" class="decrement">-</a>
 		</script>

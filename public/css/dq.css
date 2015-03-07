@@ -19,3 +19,15 @@ div.attributes a
 	padding-left: 5px;
 	padding-right: 2px;
 }
+
+div.counterName
+{
+	display: inline-block;
+	width: 3em;
+}
+
+div.counterCount
+{
+	display: inline-block;
+	width: 1em;
+}
