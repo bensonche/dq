@@ -6,6 +6,7 @@
 		<script src="//ajax.cdnjs.com/ajax/libs/json2/20110223/json2.js"></script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore.js"></script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.0/backbone-min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
 
 		<script src="js/main.js?rev=<%= ticks %>"></script>
 		<script src="js/views/mainSheetView.js?rev=<%= ticks %>"></script>
@@ -54,6 +55,17 @@
 				<div class="cell" data-name="Money Pouch">
 				</div>
 			</div>
+
+			<div class="row">
+				<div class="cell" data-name="Necklace">
+				</div>
+
+				<div class="cell" data-name="Ring 1">
+				</div>
+
+				<div class="cell" data-name="Ring 2">
+				</div>
+			</div>
 		</div>
 
 		<div id="characterStatus">
@@ -63,7 +75,7 @@
 		<script id="mainCellTemplate" type="text/template">
 			<div>
 				<p><%%- name %>:</p>
-				<textarea rows="2" class="description" />
+				<textarea rows="2" class="description"><%%- description %></textarea>
 
 				<div class="attributes"></div>
 			</div>

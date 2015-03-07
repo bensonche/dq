@@ -8,16 +8,19 @@
 			count: 0
 		},
 
+		setCount: function(value) {
+			console.log("B");
+			var current = this.get("count");
+			console.log(value - current);
+			this.addCount(value - current);
+		},
+
 		addCount: function(value) {
 			this.set("count", this.get("count") + value);
 
 			dq.characterStatus.addCount(this.get("type"), value);
 
 			return true;
-		},
-
-		setCount: function(count) {
-			this.set("count", count);
-		},
+		}
 	});
 })(dq);

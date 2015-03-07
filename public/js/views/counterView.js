@@ -3,6 +3,8 @@
 		initialize: function() {
 			_.bindAll(this, "render");
 
+			this.listenTo(this.model, "change", this.render);
+
 			this.render();
 		},
 
@@ -26,13 +28,11 @@
 		increment: function(e) {
 			e.preventDefault();
 			this.model.addCount(1);
-			this.render();
 		},
 
 		decrement: function(e) {
 			e.preventDefault();
 			this.model.addCount(-1);
-			this.render();
 		}
 	});
 
