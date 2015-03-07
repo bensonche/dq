@@ -10,9 +10,11 @@
 		<script src="js/main.js?rev=<%= ticks %>"></script>
 		<script src="js/views/mainSheetView.js?rev=<%= ticks %>"></script>
 		<script src="js/views/counterView.js?rev=<%= ticks %>"></script>
+		<script src="js/views/characterStatusView.js?rev=<%= ticks %>"></script>
 
 		<script src="js/models/counter.js?rev=<%= ticks %>"></script>
 		<script src="js/models/attribute.js?rev=<%= ticks %>"></script>
+		<script src="js/models/characterStatus.js?rev=<%= ticks %>"></script>
 
 
 		<link href="css/dq.css?rev=<%= ticks %>" type="text/css" rel="stylesheet"></link>
@@ -54,6 +56,9 @@
 			</div>
 		</div>
 
+		<div id="characterStatus">
+		</div>
+
 		<!-- Templates -->
 		<script id="mainCellTemplate" type="text/template">
 			<div>
@@ -75,6 +80,13 @@
 
 			<a href="#" class="increment">+</a>
 			<a href="#" class="decrement">-</a>
+		</script>
+
+		<script id="statusTemplate" type="text/template">
+			<div>
+				<%%= name %>
+				<%%= value %>
+			</div>
 		</script>
 	</body>
 </html>
