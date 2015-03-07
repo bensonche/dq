@@ -2,6 +2,10 @@
 	dq.MainSheetView = Backbone.View.extend({
 		el: "#mainSheet",
 
+		events: {
+			"click #btnClear": "clear"
+		},
+
 		initialize: function() {
 			_.bindAll(this, "render");
 
@@ -42,6 +46,13 @@
 				});
 
 			}, this);
+		},
+
+		clear: function() {
+			if(confirm("Are you sure you want to clear the page?")) {
+				$.removeCookie("appData");
+				location.reload();
+			}
 		}
 	});
 
