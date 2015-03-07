@@ -17,6 +17,9 @@
 
 				dq.AttributeList.add(attribute);
 			});
+
+			dq.AttributeList.fetch();
+			this.render();
 		},
 
 		render: function() {

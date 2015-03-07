@@ -6,7 +6,4 @@ $(function() {
 	new dq.CharacterStatusView({model: dq.characterStatus});
 
 	var mainSheetView = new dq.MainSheetView();
-
-	dq.AttributeList.fetch();
-	mainSheetView.render();
 });
