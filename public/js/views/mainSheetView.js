@@ -38,7 +38,7 @@
 					description: value.get("description")
 				}));
 
-				$cell.find(".description").on("keydown", value.updateDescription);
+				$cell.find(".description").on("keydown change keyup", value.updateDescription);
 
 				var includeCounter = $cell.attr("data-counter");
 
