@@ -9,9 +9,7 @@
 		},
 
 		setCount: function(value) {
-			console.log("B");
 			var current = this.get("count");
-			console.log(value - current);
 			this.addCount(value - current);
 		},
 
