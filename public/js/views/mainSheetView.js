@@ -5,29 +5,35 @@
 		initialize: function() {
 			_.bindAll(this, "render");
 
+			this.collection = new dq.AttributeSet();
+			dq.AttributeList = this.collection;
+
+			this.$(".cell").each(function(index, value) {
+				var attribute = new dq.Attribute({
+					name: $(value).attr("data-name")
+				});
+
+				dq.AttributeList.add(attribute);
+			});
+
 			this.render();
 		},
 
 		render: function() {
-			var cells = this.$el.find(".cell");
+			var template = _.template($("#mainCellTemplate").html());
 
-			var template = $("#mainCellTemplate").html();
+			this.collection.each(function(value) {
+				var name = value.get("name");
 
-			cells.each(function(index, value) {
-				var compiled = _.template(template);
+				var $cell = this.$(".cell[data-name='" + name + "']");
+				$cell.append(template({name: name}));
 
-				var $value = $(value);
-
-				var name = $value.attr("data-name");
-
-				var cell = compiled({
-					name: name
+				new dq.CounterSetView({
+					el: $cell.find(".attributes"),
+					collection: value.get("counterSet")
 				});
 
-				$value.append(cell);
-
-				var csView = new dq.CounterSetView({el: $value.find(".attributes")});
-			});
+			}, this);
 		}
 	});
 

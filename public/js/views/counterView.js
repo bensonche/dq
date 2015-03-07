@@ -25,16 +25,15 @@
 
 		increment: function(e) {
 			e.preventDefault();
-			this.model.set({count: this.model.get("count") + 1});
+			this.model.increment();
 			this.render();
 		},
 
 		decrement: function(e) {
 			e.preventDefault();
-			if(this.model.get("count") > 0) {
-				this.model.set({count: this.model.get("count") - 1});
+
+			if(this.model.decrement())
 				this.render();
-			}
 		}
 	});
 
@@ -42,18 +41,10 @@
 		initialize: function() {
 			_.bindAll(this, "render");
 
-			this.collection = new dq.CounterSet();
-
-			this.collection.add(new dq.Counter({type: "Speed"}));
-			this.collection.add(new dq.Counter({type: "Brawn"}));
-			this.collection.add(new dq.Counter({type: "Magic"}));
-			this.collection.add(new dq.Counter({type: "Armor"}));
-
 			this.render();
 		},
 
 		render: function() {
-
 			_.each(this.collection.models, function(value) {
 				var counterView = new dq.CounterView({
 					model: value,
