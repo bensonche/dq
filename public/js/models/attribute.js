@@ -11,13 +11,24 @@
 				case "create":
 				case "update":
 					var expire = new Date("12/31/2020");
-					$.cookie("appData", JSON.stringify(model.toJSON()), { expires: expire});
+
+					console.log(model.toJSON());
+
+					$.each(model.toJSON(), function(i, value) {
+						$.cookie("dqData" + i, JSON.stringify(value), { expires: expire});
+					});
+
 					break;
 				case "read":
-					if(!$.cookie("appData"))
+					if(Object.keys($.cookie()).indexOf("dqData0") < 0)
 						break;
 
-					var data = eval($.cookie("appData"));
+					var data = [];
+					$.each(Object.keys($.cookie()), function(i, key) {
+						if(key.indexOf("dqData") === 0) {
+							data.push(JSON.parse($.cookie(key)));
+						}
+					});
 
 					var self = this;
 					

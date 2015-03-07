@@ -42,7 +42,7 @@
 
 				var includeCounter = $cell.attr("data-counter");
 
-				if(includeCounter && includeCounter.toLower() == "true") {
+				if(includeCounter && includeCounter.toLowerCase() == "true") {
 					new dq.CounterSetView({
 						el: $cell.find(".attributes"),
 						collection: value.get("counterSet")
@@ -54,7 +54,11 @@
 
 		clear: function() {
 			if(confirm("Are you sure you want to clear the page?")) {
-				$.removeCookie("appData");
+				$.each(Object.keys($.cookie()), function(i, key) {
+					if(key.indexOf("dqData") >= 0) {
+						$.removeCookie(key);
+					}
+				});
 				location.reload();
 			}
 		}
