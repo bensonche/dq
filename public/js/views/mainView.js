@@ -1,5 +1,9 @@
 (function(dq) {
 	dq.MainView = dq.View.extend({
+		events: {
+			"click #btnClear": "clear"
+		},
+
 		initialize: function() {
 			var self = this;
 			function addAttribute(name, showCounter) {
@@ -39,6 +43,8 @@
 		},
 
 		render: function() {
+			this.$el.html($("#mainTemplate").html());
+
 			_(this.collection.models).each(function(value) {
 				var view = new dq.AttributeView({model: value});
 				view.$el.addClass("attribute");
@@ -47,6 +53,12 @@
 
 				this.$el.append(view.el);
 			}, this);
+		},
+
+		clear: function() {
+			this.removeAll();
+
+			dq.initialize();
 		}
 	});
 })(dq);

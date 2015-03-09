@@ -7,12 +7,14 @@
 	</head>
 
 	<body>
-		<button style="float: right;" id="btnClear">Clear</button>
-
 		<div id="mainView">
 		</div>
 
 		<!-- Templates -->
+		<script id="mainTemplate" type="text/template">
+			<button style="float: right;" id="btnClear">Clear</button>
+		</script>
+		
 		<script id="attributeTemplate" type="text/template">
 			<p><%%- name %>:</p>
 			<textarea rows="2" class="description"><%%- description %></textarea>
