@@ -6,13 +6,11 @@
 
 		render: function() {
 			_.each(this.collection.models, function(value) {
-				var counterView = new dq.CounterView({
+				var counterView = this.addView(new dq.CounterView({
 					model: value,
-				});
+				}));
 
 				this.$el.append(counterView.el);
-
-				this.childViews.push(counterView);
 			}, this);
 
 			return this;

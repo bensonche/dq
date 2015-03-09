@@ -13,6 +13,11 @@
 
 			this.remove();
 			this.off();
+		},
+
+		addView: function(view) {
+			this.childViews.push(view);
+			return view;
 		}
 	});
 

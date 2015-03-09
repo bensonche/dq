@@ -17,10 +17,8 @@
 			}));
 
 			if(this.model.get("showCounters")) {
-				var view = new dq.CounterSetView({collection: this.model.get("counterSet")});
+				var view = this.addView(new dq.CounterSetView({collection: this.model.get("counterSet")}));
 				this.$el.append(view.el);
-
-				this.childViews.push(view);
 			}
 		},
 

@@ -46,10 +46,8 @@
 			this.$el.html($("#mainTemplate").html());
 
 			_(this.collection.models).each(function(value) {
-				var view = new dq.AttributeView({model: value});
+				var view = this.addView(new dq.AttributeView({model: value}));
 				view.$el.addClass("attribute");
-
-				this.childViews.push(view);
 
 				this.$el.append(view.el);
 			}, this);
