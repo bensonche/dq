@@ -1,5 +1,6 @@
 var dq = dq || {};
 
 $(function() {
-	$("#mainView").append(new dq.MainView().el);
+	dq.mainView = new dq.MainView();
+	$("#mainView").append(dq.mainView.el);
 });

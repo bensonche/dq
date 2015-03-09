@@ -35,6 +35,8 @@
 
 	dq.CounterSetView = Backbone.View.extend({
 		initialize: function() {
+			this.childViews = [];
+
 			this.render();
 		},
 
@@ -46,6 +48,7 @@
 
 				this.$el.append(counterView.el);
 
+				this.childViews.push(counterView);
 			}, this);
 
 			return this;

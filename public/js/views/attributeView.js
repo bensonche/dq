@@ -1,6 +1,8 @@
 (function(dq) {
 	dq.AttributeView = Backbone.View.extend({
 		initialize: function() {
+			this.childViews = [];
+
 			this.render();
 		},
 
@@ -13,7 +15,10 @@
 			}));
 
 			if(this.model.get("showCounters")) {
-				this.$el.append(new dq.CounterSetView({collection: this.model.get("counterSet")}).el);
+				var view = new dq.CounterSetView({collection: this.model.get("counterSet")});
+				this.$el.append(view.el);
+
+				this.childViews.push(view);
 			}
 		}
 	});
