@@ -24,6 +24,31 @@
 
 		descriptionChanged: function(e) {
 			this.model.set("description", $(e.target).val());
+			this.updateTextboxSize(e);
+		},
+
+		updateTextboxSize: function(e) {
+			var textarea = $(e.target);
+
+			var hiddenDiv = $("<div class='Arial11' style='display: none;' />");	
+
+			$("body").append(hiddenDiv);
+
+			hiddenDiv.css("width", textarea.width());
+
+			var content = textarea.val();
+			content = content.replace(/\n/g, '<br>');
+
+			hiddenDiv.html(content + "<br /><br />");
+
+			var minHeight = 70;
+
+			if (hiddenDiv.height() < minHeight)
+				textarea.height(minHeight);
+			else
+				textarea.height(hiddenDiv.height());
+
+			hiddenDiv.remove();
 		}
 	});
 })(dq);

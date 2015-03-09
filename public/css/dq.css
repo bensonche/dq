@@ -3,6 +3,12 @@ body
 	font-family: Arial;
 }
 
+.Arial11
+{
+	font-family: Arial;
+	font-size: 11px;
+}
+
 div#mainView
 {
 	margin-top: 30px;
@@ -12,6 +18,7 @@ div.attribute
 {
 	display: inline-block;
 	padding-right: 15px;
+	vertical-align: top;
 }
 
 div.attribute textarea.description
