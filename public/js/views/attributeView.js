@@ -1,5 +1,9 @@
 (function(dq) {
 	dq.AttributeView = dq.View.extend({
+		events: {
+			"keyup .description": "descriptionChanged"
+		},
+
 		initialize: function() {
 			this.render();
 		},
@@ -18,6 +22,10 @@
 
 				this.childViews.push(view);
 			}
+		},
+
+		descriptionChanged: function(e) {
+			this.model.set("description", $(e.target).val());
 		}
 	});
 })(dq);
