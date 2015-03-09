@@ -9,12 +9,13 @@ div.attribute textarea.description
 	height: 75px;
 }
 
-div.attributes
+div.counters
 {
 	display: inline-block;
+	vertical-align: top;
 }
 
-div.attributes a
+div.counters a
 {
 	padding-left: 5px;
 	padding-right: 2px;

@@ -18,6 +18,9 @@
 				view.$el.addClass("attribute");
 
 				this.$el.append(view.el);
+
+				if(value.get("EOL"))
+					this.$el.append("<br />");
 			}, this);
 
 			var view = this.addView(new dq.CharacterStatusView());
@@ -33,37 +36,39 @@
 
 		setupCollection: function() {
 			var self = this;
-			function addAttribute(name, showCounter) {
+			function addAttribute(name, showCounter, EOL) {
 				if(typeof(showCounter) == "undefined")
 					showCounter = false;
+				if(typeof(EOL) == "undefined")
+					EOL = false;
 
-				self.collection.add(new dq.Attribute({name: name, showCounters: showCounter}));
+				self.collection.add(new dq.Attribute({name: name, showCounters: showCounter, EOL: EOL}));
 			}
 
 			this.collection = new dq.AttributeSet();
 
 			addAttribute("Cloak", true);
 			addAttribute("Head", true);
-			addAttribute("Gloves", true);
+			addAttribute("Gloves", true, true);
 
 			addAttribute("Main Hand", true);
 			addAttribute("Chest", true);
-			addAttribute("Left Hand", true);
+			addAttribute("Left Hand", true, true);
 
 			addAttribute("Talisman", true);
 			addAttribute("Feet", true);
-			addAttribute("Money Pouch", true);
+			addAttribute("Money Pouch", false, true);
 
 			addAttribute("Necklace", true);
 			addAttribute("Ring 1", true);
-			addAttribute("Ring 2", true);
+			addAttribute("Ring 2", true, true);
 
 			addAttribute("Backpack 1", false);
 			addAttribute("Backpack 2", false);
 			addAttribute("Backpack 3", false);
-
 			addAttribute("Backpack 4", false);
-			addAttribute("Backpack 5", false);
+			addAttribute("Backpack 5", false, true);
+
 			addAttribute("Notes", false);
 		}
 	});

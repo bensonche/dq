@@ -13,6 +13,8 @@
 				this.$el.append(counterView.el);
 			}, this);
 
+			this.$el.addClass("counters");
+
 			return this;
 		}
 	});

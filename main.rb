@@ -24,7 +24,6 @@ class App < Sinatra::Application
 
 			'js/models/counter.js',
 			'js/models/attribute.js',
-			'js/models/characterStatus.js'
 		]
 
 		css_list = [
