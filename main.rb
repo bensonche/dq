@@ -15,9 +15,11 @@ class App < Sinatra::Application
 			'//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js',
 
 			'js/main.js',
+			'js/views/dqView.js',
 			'js/views/mainView.js',
 			'js/views/attributeView.js',
 			'js/views/counterView.js',
+			'js/views/counterSetView.js',
 			'js/views/characterStatusView.js',
 
 			'js/models/counter.js',

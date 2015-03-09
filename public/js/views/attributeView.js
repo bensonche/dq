@@ -1,8 +1,6 @@
 (function(dq) {
-	dq.AttributeView = Backbone.View.extend({
+	dq.AttributeView = dq.View.extend({
 		initialize: function() {
-			this.childViews = [];
-
 			this.render();
 		},
 

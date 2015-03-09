@@ -7,8 +7,6 @@
 		},
 
 		initialize: function() {
-			_.bindAll(this, "render");
-
 			this.collection = new dq.AttributeSet();
 			dq.AttributeList = this.collection;
 

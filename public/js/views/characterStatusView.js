@@ -1,10 +1,8 @@
 (function(dq) {
-	dq.CharacterStatusView = Backbone.View.extend({
+	dq.CharacterStatusView = dq.View.extend({
 		el: "#characterStatus",
 
 		initialize: function() {
-			_.bindAll(this, "render");
-
 			this.model.bind("change", this.render);
 
 			this.render();

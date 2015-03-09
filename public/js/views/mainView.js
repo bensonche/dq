@@ -1,8 +1,6 @@
 (function(dq) {
-	dq.MainView = Backbone.View.extend({
+	dq.MainView = dq.View.extend({
 		initialize: function() {
-			this.childViews = [];
-
 			var self = this;
 			function addAttribute(name, showCounter) {
 				if(typeof(showCounter) == "undefined")
@@ -42,12 +40,12 @@
 
 		render: function() {
 			_(this.collection.models).each(function(value) {
-				var view = new dq.AttributeView({model: value}).$el;
-				view.addClass("attribute");
+				var view = new dq.AttributeView({model: value});
+				view.$el.addClass("attribute");
 
 				this.childViews.push(view);
 
-				this.$el.append(view);
+				this.$el.append(view.el);
 			}, this);
 		}
 	});
