@@ -20,14 +20,7 @@
 				}));
 			}, this);
 
-			return;
-
-
-			$.each(keys, function(index, key) {
-				var value = self.model.get(key);
-
-				self.$el.append(template({name: key, value: value}));
-			});
+			this.$el.addClass("status");
 		},
 
 		addCount: function(e) {

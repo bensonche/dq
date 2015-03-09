@@ -1,6 +1,17 @@
+body
+{
+	font-family: Arial;
+}
+
+div#mainView
+{
+	margin-top: 30px;
+}
+
 div.attribute
 {
 	display: inline-block;
+	padding-right: 15px;
 }
 
 div.attribute textarea.description
@@ -31,4 +42,15 @@ div.counterCount
 {
 	display: inline-block;
 	width: 1em;
+}
+
+div.status
+{
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	background-color: white;
+	padding: 6px 10px 6px 10px;
+	border: 2px solid;
+	border-radius: 15px;
 }
