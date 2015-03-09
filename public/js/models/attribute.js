@@ -53,23 +53,17 @@
 		initialize: function() {
 			_.bindAll(this, "updateDescription");
 
-			var self = this;
-			function addCounter(type) {
-				var counter = new dq.Counter({type: type});
-				counterSet.add(counter);
+			if(this.get("showCounters")) {
+				var counterSet = new dq.CounterSet();
+				this.set("counterSet", counterSet);
 
-				counter.bind("change", function() {
-					self.trigger("change");
+				this.listenTo(counterSet, "change", function(e) {
+					this.trigger("countChanged", {
+						type: e.get("type"),
+						countChange: e.get("count") - e.previous("count")
+					});
 				});
 			}
-
-			this.set("counterSet", new dq.CounterSet());
-			var counterSet = this.get("counterSet");
-
-			addCounter("Speed");
-			addCounter("Brawn");
-			addCounter("Magic");
-			addCounter("Armor");
 		},
 
 		updateDescription: function(e) {
@@ -86,7 +80,7 @@
 
 				if(counterList.length > 0) {
 					var counter = counterList[0];
-					counter.setCount(value.count);
+					counter.set("count", value.count);
 				}
 			});
 		}

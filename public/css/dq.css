@@ -1,9 +1,9 @@
-div.cell
+div.attribute
 {
 	display: inline-block;
 }
 
-div.cell textarea.description
+div.attribute textarea.description
 {
 	width: 200px;
 	height: 75px;

@@ -1,8 +1,6 @@
 (function(dq){
 	dq.CounterView = Backbone.View.extend({
 		initialize: function() {
-			_.bindAll(this, "render");
-
 			this.listenTo(this.model, "change", this.render);
 
 			this.render();
@@ -14,10 +12,9 @@
 		},
 
 		render: function() {
-			var template = $("#counterTemplate").html();
-			var compiled = _.template(template);
+			var template = _.template($("#counterTemplate").html());
 
-			this.$el.html(compiled({
+			this.$el.html(template({
 				count: this.model.get("count"),
 				type: this.model.get("type")
 			}));
@@ -38,8 +35,6 @@
 
 	dq.CounterSetView = Backbone.View.extend({
 		initialize: function() {
-			_.bindAll(this, "render");
-
 			this.render();
 		},
 

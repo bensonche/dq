@@ -7,87 +7,15 @@
 	</head>
 
 	<body>
-		<div id="mainSheet">
-			<button style="float: right;" id="btnClear">Clear</button>
+		<button style="float: right;" id="btnClear">Clear</button>
 
-			<div class="row">
-				<div class="cell" data-counter="true" data-name="Cloak">
-				</div>
-
-				<div class="cell" data-counter="true" data-name="Head">
-				</div>
-
-				<div class="cell" data-counter="true" data-name="Gloves">
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="cell" data-counter="true" data-name="Main Hand">
-				</div>
-
-				<div class="cell" data-counter="true" data-name="Chest">
-				</div>
-
-				<div class="cell" data-counter="true" data-name="Left Hand">
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="cell" data-counter="true" data-name="Talisman">
-				</div>
-
-				<div class="cell" data-counter="true" data-name="Feet">
-				</div>
-
-				<div class="cell" data-counter="true" data-name="Money Pouch">
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="cell" data-counter="true" data-name="Necklace">
-				</div>
-
-				<div class="cell" data-counter="true" data-name="Ring 1">
-				</div>
-
-				<div class="cell" data-counter="true" data-name="Ring 2">
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="cell" data-name="Backpack 1">
-				</div>
-
-				<div class="cell" data-name="Backpack 2">
-				</div>
-
-				<div class="cell" data-name="Backpack 3">
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="cell" data-name="Backpack 4">
-				</div>
-
-				<div class="cell" data-name="Backpack 5">
-				</div>
-
-				<div class="cell" data-name="Notes">
-				</div>
-			</div>
-		</div>
-
-		<div id="characterStatus">
+		<div id="mainView">
 		</div>
 
 		<!-- Templates -->
-		<script id="mainCellTemplate" type="text/template">
-			<div>
-				<p><%%- name %>:</p>
-				<textarea rows="2" class="description"><%%- description %></textarea>
-
-				<div class="attributes"></div>
-			</div>
+		<script id="attributeTemplate" type="text/template">
+			<p><%%- name %>:</p>
+			<textarea rows="2" class="description"><%%- description %></textarea>
 		</script>
 
 		<script id="counterTemplate" type="text/template">

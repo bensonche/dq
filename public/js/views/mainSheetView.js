@@ -22,6 +22,9 @@
 				dq.AttributeList.add(attribute);
 			});
 
+			this.listenTo(dq.AttributeList, "countChanged", function(e) {
+			});
+
 			dq.AttributeList.fetch();
 			this.render();
 		},
@@ -59,7 +62,7 @@
 						$.removeCookie(key);
 					}
 				});
-				location.reload();
+				this.remove();
 			}
 		}
 	});
