@@ -12,8 +12,6 @@
 				case "update":
 					var expire = new Date("12/31/2020");
 
-					console.log(model.toJSON());
-
 					$.each(model.toJSON(), function(i, value) {
 						$.cookie("dqData" + i, JSON.stringify(value), { expires: expire});
 					});
